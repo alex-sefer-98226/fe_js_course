@@ -393,32 +393,3 @@ console.log(usersGetSum.call(anotherContext, 42));
 // const anotherResult = func(1, 2, 3, 4, 5);
 // console.log(anotherResult);
 divider();
-
-function arrayTesting(arr) {
-  // .some
-  let result = false;
-
-  result = arr.some((item) => {
-    const isTrueElement = Boolean(item); //true || false
-    return isTrueElement;
-  });
-  return result ? "Нашли true значение" : "Ничего нет";
-}
-
-// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-// const value = arr.some((item, index, arr) => {
-//   //
-//   console.log(item);
-//   if (item == 8) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// });
-
-// console.log(value);
-const haveTrueValue = arrayTesting([0, false, null, 1]);
-console.log(haveTrueValue);
-const dontHaveTrueValue = arrayTesting([0, false, null, 0]);
-console.log(dontHaveTrueValue);
