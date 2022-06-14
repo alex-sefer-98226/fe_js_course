@@ -111,8 +111,8 @@ document.body.style.background = "red";
 
 Самый внешний тег - <html>, поэтому дерево начинает расти от него.
 
-Внутри <html> находятся два узла:
-- <head> и <body> - они становятся дочерними узлами для <html>.
+Внутри `<html>` находятся два узла:
+- `<head>` и `<body>` - они становятся дочерними узлами для `<html>`.
 
 ![help](https://javascript.ru/files/upload/jsintro/dom0.png)
 
