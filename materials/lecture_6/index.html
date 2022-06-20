@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      background-color: aquamarine;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .first {
+      width: 80px;
+      height: 80px;
+      background-color: azure;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    .second {
+      width: 60px;
+      height: 60px;
+      background-color: violet;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    .third {
+      width: 40px;
+      height: 40px;
+      background-color: rgb(0, 8, 254);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    input {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="wrapper">
+    <div class="first">1</div>
+    <div class="second">
+      2
+    </div>
+    <div class="third">3</div>
+  </div>
+  <a href="http://google.com" target="_blank" rel="noopener noreferrer">
+    Google.com
+  </a>
+  <br />
+  <input type="text" name="" id="text">
+  <br /> -->
+  <form action="">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required>
+    <label for="age">Введите возраст</label>
+    <input type="number" name="age" id="age" min="0">
+    <label for="agree">Я согласен с условиями использования</label>
+    <input type="checkbox" name="agree" id="agree" disabled>
+
+    <button type="submit">Отправить</button>
+  </form>
+  <br />
+  <!-- <button>Click on me</button> -->
+  <div id="number_value">
+    0
+  </div>
+  <button id="first">-32</button>
+  <button id="second">+1</button>
+  <button id="third">+44</button>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
