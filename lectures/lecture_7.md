@@ -57,8 +57,6 @@ elem.addEventListener(..., {capture: true})
 elem.addEventListener(..., true)
 ```
 
-<h1>Pause</h1>
-
 # Пример всплытия и погружения
 
 ```
