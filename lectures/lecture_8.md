@@ -307,13 +307,13 @@ promise
 ```
 const btn = document.getElementById('btn');
 const server = [{
-    name: 'Vlad',
-    surName: 'Rusanov',
-    eyeColour: 'eyeColour'
+    name: 'Andrew',
+    surName: 'Developer',
+    eyeColour: 'brown'
 }, {
-    name: 'Vova',
-    surName: 'Test',
-    eyeColour: 'eyeColour'
+    name: 'Anatoliy',
+    surName: 'Engineer',
+    eyeColour: 'red'
 }];
 const getDataFromServer = () => {
     return new Promise((resolve, reject) => { // (0)
@@ -324,10 +324,10 @@ const getDataFromServer = () => {
     })
 }
 function asyncAction() {
-    const responce = getDataFromServer();
-    responce
+    const response = getDataFromServer();
+    response
         .then((data) => {  // (1)
-            console.log('data: ', data); // [{ name: 'Vlad', ... }, { name: 'Vova', ... }]
+            console.log('data: ', data); // [{ name: 'Andrew', ... }, { name: 'Anatoliy', ... }]
         })
         .catch((err) => { // (2)
             console.log('err: ', err);
@@ -343,7 +343,7 @@ btn.addEventListener('click', asyncAction)
 Внутри это функции мы получаем данные с "сервера":
 
 ```
-const responce = getDataFromServer();
+const response = getDataFromServer();
 ```
 
 2) Функция getDataFromServer(). (0)
