@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Additional lecture</title>
+  <style>
+    .tomato {
+      background-color: tomato;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .green {
+      background-color: green;
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .blue {
+      background-color: blue;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="my-popup">
+    <div class="modal">
+      <span class="mypopup-close">&times;</span>
+      <h2 class="mypopup-header">Вы открыли модальное окно</h2>
+      <p class="modal-text">Здесь размещается текст</p>
+    </div>
+  </div>
+  <button id="addPopup">Открыть модальное окно</button>
+
+  <!-- <div class="tomato">
+    <div class="green">
+      <div class="blue"></div>
+    </div>
+  </div>
+  <button id="btn">Click on me</button> -->
+  <script src="main.js"></script>
+</body>
+
+</html>
