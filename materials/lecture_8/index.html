@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 8</title>
+  <style>
+    .lds-dual-ring {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+    }
+
+    .lds-dual-ring:after {
+      content: " ";
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 6px solid #000;
+      border-color: #000 transparent #000 transparent;
+      animation: lds-dual-ring 1.2s linear infinite;
+    }
+
+    @keyframes lds-dual-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <ul>
+    <li>1</li>
+    <li>2</li>
+    <li id="listItem">3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul> -->
+  <div>
+    <ol id="orderedListItem">
+    </ol>
+  </div>
+  <button id="btn">Click</button>
+
+  <ul>
+  </ul>
+  <button class="btn">Load users</button>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
