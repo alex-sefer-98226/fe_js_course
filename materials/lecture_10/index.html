@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 10</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li name="test">3</li>
+    <!-- <li id="test">4</li> -->
+    <li>4</li>
+    <li name="something">5</li>
+  </ul>
+  <p id="myElement">The namedItem() method returns the element with the specified ID or name.</p>
+  <p>Click the button to return the content of the P element with ID "myElement":</p>
+  <button onclick="myFunction()">Alert innerHTML of P</button>
+  <script>
+    function myFunction() {
+      const x = document.getElementsByTagName("p").namedItem("myElement"); // сработает только если есть id или name
+      alert(x.innerHTML);
+    }
+  </script>
+
+
+  <a download="hello.txt" href='#' id="link">Загрузить</a>
+  <script>
+    let blob = new Blob(["Hello, world!"], { type: 'text/plain' });
+    link.href = URL.createObjectURL(blob);
+  </script>
+  <br>
+  <br>
+  <input type="file" onchange="readFile(this)">
+  <script>
+    function readFile(input) {
+      let file = input.files[0];
+      let reader = new FileReader();
+      reader.readAsText(file);
+
+      reader.onload = function () {
+        console.log(reader.result);
+      };
+
+      reader.onerror = function () {
+        console.log(reader.error);
+      };
+    }
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
