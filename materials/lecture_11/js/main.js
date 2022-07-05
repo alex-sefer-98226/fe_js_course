@@ -91,11 +91,11 @@ function MyCustomError(message, type) {
 
   this.message = message;
 }
-console.log(1);
-setTimeout(() => {
-  console.log(2);
-}, 0);
-console.log(3);
+// console.log(1);
+// setTimeout(() => {
+//   console.log(2);
+// }, 0);
+// console.log(3);
 
 // try {
 //   const value = Math.random(); // [0, 1) 0 - 0.99
@@ -144,87 +144,147 @@ console.log(3);
  * Async/await
  */
 
-const API_URL = "https://jsonplaceholder.typicode.com";
+// const API_URL = "https://jsonplaceholder.typicode.com";
 
-btn.addEventListener("click", () => {
-  sendRequest();
-});
+// btn.addEventListener("click", () => {
+//   sendRequest();
+// });
 
-const sendRequest = () => {
-  fetch(`${API_URL}/users`)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Response is not ok");
-      }
-    })
-    .then((result) => {
-      console.log("Users", result);
-      fetch(`${API_URL}/posts`)
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw new Error("Response is not ok");
-          }
-        })
-        .then((res) => {
-          console.log("Posts", res);
-          fetch(`${API_URL}/comments`)
-            .then((response) => {
-              if (response.ok) {
-                return response.json();
-              } else {
-                throw new Error("Response is not ok");
-              }
-            })
-            .then((result) => {
-              console.log("comments", result);
-            })
-            .catch((err) => {
-              console.log("errored", err);
-            });
-        })
-        .catch((err) => {
-          console.log("errored", err);
-        });
-    })
-    .catch((err) => {
-      console.log("errored", err);
-    });
-};
+// const sendRequest = () => {
+//   fetch(`${API_URL}/users`)
+//     .then((response) => {
+//       if (response.ok) {
+//         return response.json();
+//       } else {
+//         throw new Error("Response is not ok");
+//       }
+//     })
+//     .then((result) => {
+//       console.log("Users", result);
+//       fetch(`${API_URL}/posts`)
+//         .then((response) => {
+//           if (response.ok) {
+//             return response.json();
+//           } else {
+//             throw new Error("Response is not ok");
+//           }
+//         })
+//         .then((res) => {
+//           console.log("Posts", res);
+//           fetch(`${API_URL}/comments`)
+//             .then((response) => {
+//               if (response.ok) {
+//                 return response.json();
+//               } else {
+//                 throw new Error("Response is not ok");
+//               }
+//             })
+//             .then((result) => {
+//               console.log("comments", result);
+//             })
+//             .catch((err) => {
+//               console.log("errored", err);
+//             });
+//         })
+//         .catch((err) => {
+//           console.log("errored", err);
+//         });
+//     })
+//     .catch((err) => {
+//       console.log("errored", err);
+//     });
+// };
 
-const asyncFunction = async () => {
-  try {
-    console.log("started");
-    const usersResponse = await fetch(`${API_URL}/users`);
-    if (!usersResponse.ok) {
-      throw new Error("usersResponse is not ok");
-    }
-    console.log("Before response");
-    const usersData = await usersResponse.json();
-    console.log("Users", usersData);
-    console.log("started");
-    const postsResponse = await fetch(`${API_URL}/posts`);
-    if (!postsResponse.ok) {
-      throw new Error("postsResponse is not ok");
-    }
-    console.log("Before response");
-    const postsData = await postsResponse.json();
-    console.log("postsData", postsData);
+// const asyncFunction = async () => {
+//   try {
+//     const usersResponse = await fetch(`${API_URL}/users`);
+//     if (!usersResponse.ok) {
+//       throw new Error("usersResponse is not ok");
+//     }
+//     const usersData = await usersResponse.json();
 
-    const commentsResponse = await fetch(`${API_URL}/posts`);
-    if (!commentsResponse.ok) {
-      throw new Error("commentsResponse is not ok");
-    }
-    const commentsData = await commentsResponse.json();
-    console.log("commentsData", commentsData);
-  } catch (error) {
-    console.log("errored", error);
-  }
-};
+//     const postsResponse = await fetch(`${API_URL}/posts`);
+//     if (!postsResponse.ok) {
+//       throw new Error("postsResponse is not ok");
+//     }
+//     const postsData = await postsResponse.json();
 
-asn.addEventListener("click", () => {
-  asyncFunction();
-});
+//     const commentsResponse = await fetch(`${API_URL}/posts`);
+//     if (!commentsResponse.ok) {
+//       throw new Error("commentsResponse is not ok");
+//     }
+//     const commentsData = await commentsResponse.json();
+//   } catch (error) {}
+// };
+
+// asn.addEventListener("click", () => {
+//   asyncFunction();
+// });
+
+/**
+ * Destructurization
+ */
+
+//  const obj = {
+//   a: 3,
+//   b: 4,
+//   c: 4,
+// };
+
+// const { a, c } = obj;
+
+// console.log(a, c);
+
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+
+// const [first, second, third, ...rest] = arr;
+
+// console.log(first, second, third, rest);
+
+// const input = document.querySelector("input");
+// const searchButton = document.getElementById("searchButton");
+// const str = "   h i   ";
+
+// const GITHUB_API_URL = "https://api.github.com";
+
+// const findUser = async () => {
+//   try {
+//     const { value } = input;
+//     const text = value.split(" ").join("");
+//     if (text == "") {
+//       throw new Error("Empty search field");
+//     }
+
+//     const response = await fetch(`${GITHUB_API_URL}/users/${text}`);
+//     if (!response.ok) {
+//       throw new Error("User not found");
+//     }
+//     const data = await response.json();
+//     console.log("data", data);
+//   } catch (error) {
+//     alert(error.message);
+//   }
+// };
+
+// searchButton.addEventListener("click", findUser);
+
+// const div = document.getElementById("example");
+// console.log(div.offsetLeft);
+// console.log(div.offsetTop);
+
+// console.log(div.clientLeft);
+// console.log(div.clientTop);
+
+// console.log(div.scrollHeight);
+
+// document.querySelector("button").addEventListener("click", () => {
+//   // test.scrollIntoView({
+//   //   behavior: "smooth",
+//   //   block: "end",
+//   // });
+//   example.style.height = `${example.scrollHeight}px`;
+// });
+
+// reset.addEventListener("click", () => {
+//   example.removeAttribute("style");
+// });
