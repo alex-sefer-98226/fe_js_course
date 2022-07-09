@@ -376,5 +376,3 @@ console.log(AnyClass.CURRENT_LESSON);
 AnyClass.CURRENT_LESSON = 32;
 
 console.log(AnyClass.CURRENT_LESSON);
-
-foo("AAAAABBBBBCCCCDDDDAAB"); // ["A", "B", "C", "D", "A", "B"]
