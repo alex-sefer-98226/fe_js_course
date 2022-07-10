@@ -5,7 +5,7 @@
 
 В результате получаем магазин, с работающей корзиной, слайдером, боковым фильтром.
 
-Ссылка на дизайн [тут](https://www.figma.com/file/I2ir7yX9bwtn5RDuxAscVH/MacOutlet?node-id=6%3A1298)
+Ссылка на дизайн [тут](https://www.figma.com/file/5GZU2249vpF81SDbeT9clQ/MacOutlet?node-id=1846%3A2)
 ## Перед разработкой
 
 1. Создаём новый репозиторий
