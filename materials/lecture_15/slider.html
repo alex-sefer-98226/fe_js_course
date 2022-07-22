@@ -1,184 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Simple Slider</title>
-    <style>
-      .slider {
-        max-width: 50%;
-        position: relative;
-        margin: auto;
-        height: 300px;
-        margin-bottom: 15px;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Simple Slider</title>
+  <style>
+    .slider {
+      max-width: 50%;
+      position: relative;
+      margin: auto;
+      height: 300px;
+      margin-bottom: 15px;
+    }
+
+    .slider .item img {
+      object-fit: contain;
+      width: 100%;
+      height: 300px;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .slider .prev,
+    .slider .next {
+      cursor: pointer;
+      position: absolute;
+      background: none;
+      border: 1px solid rgba(0, 0, 0, 0);
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .slider .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .slider .prev:hover,
+    .slider .next:hover {
+      background-color: rgba(129, 86, 86, 0.8);
+    }
+
+    .title-slider {
+      position: absolute;
+      font-size: 35px;
+      left: 50%;
+      top: 3%;
+      transform: translate(-50%, -50%);
+      color: black;
+    }
+
+    .slider-dots {
+      text-align: center;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 2px;
+      background-color: #ddd;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #aaa;
+    }
+
+    .slider .item {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: 0.4;
       }
 
-      .slider .item img {
-        object-fit: contain;
-        width: 100%;
-        height: 300px;
-        border: none !important;
-        box-shadow: none !important;
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0.4;
       }
 
-      .slider .prev,
-      .slider .next {
-        cursor: pointer;
-        position: absolute;
-        background: none;
-        border: 1px solid rgba(0, 0, 0, 0);
-        top: 50%;
-        width: auto;
-        margin-top: -22px;
-        padding: 16px;
-        color: black;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
+      to {
+        opacity: 1;
       }
+    }
+  </style>
+</head>
 
-      .slider .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
-
-      .slider .prev:hover,
-      .slider .next:hover {
-        background-color: rgba(129, 86, 86, 0.8);
-      }
-
-      .title-slider {
-        position: absolute;
-        font-size: 35px;
-        left: 50%;
-        top: 3%;
-        transform: translate(-50%, -50%);
-        color: black;
-      }
-
-      .slider-dots {
-        text-align: center;
-      }
-
-      .dot {
-        cursor: pointer;
-        height: 12px;
-        width: 12px;
-        margin: 0 2px;
-        background-color: #ddd;
-        border-radius: 50%;
-        display: inline-block;
-        transition: background-color 0.6s ease;
-      }
-
-      .active,
-      .dot:hover {
-        background-color: #aaa;
-      }
-
-      .slider .item {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 1.5s;
-      }
-
-      @-webkit-keyframes fade {
-        from {
-          opacity: 0.4;
-        }
-
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fade {
-        from {
-          opacity: 0.4;
-        }
-
-        to {
-          opacity: 1;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="slider">
-      <div class="item">
-        <img
-          src="../../homeworks/assets/module/img/banners/ipad_air_banner.jpg"
-          alt="Первый слайд"
-        />
-        <div class="title-slider">Какой-то текст</div>
-      </div>
-
-      <div class="item">
-        <img
-          src="../../homeworks/assets/module/img/banners/iphone_12_banner.jpg"
-          alt="Второй слайд"
-        />
-        <div class="title-slider">Какой-то текст</div>
-      </div>
-
-      <div class="item">
-        <img
-          src="../../homeworks/assets/module/img/banners/air_pods_max_banner.jpg"
-          alt="Третий слайд"
-        />
-        <div class="title-slider">Какой-то текст</div>
-      </div>
-
-      <button class="prev" onclick="minusSlide()">❮</button>
-      <button class="next" onclick="plusSlide()">❯</button>
+<body>
+  <div class="slider">
+    <div class="item">
+      <img src="../../homeworks/assets/module/img/banners/ipad_air_banner.jpg" alt="Первый слайд" />
+      <div class="title-slider">Какой-то текст</div>
     </div>
 
-    <div class="slider-dots">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+    <div class="item">
+      <img src="../../homeworks/assets/module/img/banners/iphone_12_banner.jpg" alt="Второй слайд" />
+      <div class="title-slider">Какой-то текст</div>
     </div>
-    <script>
-      let slideIndex = 1;
 
-      const plusSlide = () => {
-        showSlides((slideIndex += 1));
-      };
+    <div class="item">
+      <img src="../../homeworks/assets/module/img/banners/air_pods_max_banner.jpg" alt="Третий слайд" />
+      <div class="title-slider">Какой-то текст</div>
+    </div>
 
-      const minusSlide = () => {
-        showSlides((slideIndex -= 1));
-      };
+    <button class="prev" onclick="minusSlide()">❮</button>
+    <button class="next" onclick="plusSlide()">❯</button>
+  </div>
 
-      const currentSlide = (n) => {
-        showSlides((slideIndex = n));
-      };
+  <div class="slider-dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <script>
+    let slideIndex = 1;
 
-      const showSlides = (n) => {
-        const slides = document.getElementsByClassName("item");
-        const dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (let i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace("active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-      };
-      showSlides(slideIndex);
-    </script>
-  </body>
+    const plusSlide = () => {
+      showSlides((slideIndex += 1));
+    };
+
+    const minusSlide = () => {
+      showSlides((slideIndex -= 1));
+    };
+
+    const currentSlide = (n) => {
+      showSlides((slideIndex = n));
+    };
+
+    const showSlides = (n) => {
+      const slides = document.getElementsByClassName("item");
+      const dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace("active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    };
+    showSlides(slideIndex);
+  </script>
+</body>
+
 </html>
